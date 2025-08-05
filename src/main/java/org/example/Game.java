@@ -66,7 +66,10 @@ public class Game {
                         EXIT_TO_MENU_COMMAND, maskedWord.getMask(), attempts, incorrectLetters);
             }
 
-            checkGameRoundState(attempts, maskedWord);
+            if(attempts <= 0 || maskedWord.isTargetEqualsMask()){
+                checkGameRoundState(attempts, maskedWord);
+                return;
+            }
         }
 
     }
