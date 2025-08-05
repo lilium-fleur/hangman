@@ -1,12 +1,8 @@
 package org.example;
 
-import java.util.HashSet;
-import java.util.Set;
-
 public class MaskedWord {
     private String targetWord;
     private StringBuilder mask;
-    private Set<Character> guessedLetters = new HashSet<>();
 
     public MaskedWord(String targetWord) {
         this.targetWord = targetWord;
@@ -28,7 +24,6 @@ public class MaskedWord {
 
         while (letterIndex >= 0) {
             mask.setCharAt(letterIndex, inputLetter);
-            guessedLetters.add(inputLetter);
             letterIndex = targetWord.indexOf(inputLetter, letterIndex + 1);
         }
         return true;
